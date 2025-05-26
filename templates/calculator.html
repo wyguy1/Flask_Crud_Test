@@ -1,11 +1,19 @@
 {% extends "base.html" %}
-{% block title %}About Play Maker{% endblock %}
+
+{% block title %}Calculator{% endblock %}
+
 {% block content %}
-<h1>📘 About</h1>
-<p>Play Maker is your all-in-one sports simulation and team management toolkit. Built with Flask, this prototype aims to:</p>
-<ul>
-  <li>🏈 Simulate player movement and plays</li>
-  <li>📊 Manage rosters, teams, and coach dashboards</li>
-  <li>🛠 Serve as a modular foundation for future sports analytics</li>
-</ul>
+  <center>
+    <h2>Simple Calculator</h2>
+    <p>🧮 Add two numbers together. It’s not rocket science. Yet.</p>
+    <form method="POST">
+        <input type="text" name="num1" placeholder="First number">
+        <input type="text" name="num2" placeholder="Second number">
+        <button type="submit">Add</button>
+    </form>
+
+    {% if result is not none %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+  </center>
 {% endblock %}
