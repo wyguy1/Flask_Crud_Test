@@ -5,6 +5,12 @@
 <h2>🧠 Play Maker Prototype (With Animation)</h2>
 <p>Click to drop players. Toggle draw mode to add movement routes. Press play to animate.</p>
 
+<ul>
+  <li>Click to place a player</li>
+  <li>Enable draw mode to create a movement route</li>
+  <li>Press ▶️ Play to animate the play</li>
+</ul>
+
 <div id="field" style="position: relative; width: 600px; height: 400px; background: #1e1e1e; border: 2px solid #555; margin-bottom: 1rem;"></div>
 
 <div style="margin-bottom: 1rem;">
@@ -33,7 +39,6 @@ field.addEventListener('click', function(e) {
   const y = e.clientY - rect.top;
 
   if (!isDrawing) {
-    // Create a player piece
     const circle = document.createElement('div');
     circle.style.position = 'absolute';
     circle.style.left = (x - 15) + 'px';
@@ -63,12 +68,10 @@ field.addEventListener('click', function(e) {
     players.push({ el: circle, path: [] });
 
   } else {
-    // Drawing mode is ON
     if (!activePlayer) return;
     const px = e.clientX - rect.left;
     const py = e.clientY - rect.top;
 
-    // Visual route point
     const dot = document.createElement('div');
     dot.style.position = 'absolute';
     dot.style.width = '6px';
@@ -99,7 +102,7 @@ function playAnimation() {
     if (!path.length) return;
 
     let i = 0;
-    const speed = 2; // pixels per frame
+    const speed = 2;
 
     function animate() {
       if (i >= path.length) return;
