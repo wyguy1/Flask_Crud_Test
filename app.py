@@ -19,7 +19,7 @@ def DevHome():
     return render_template("DevHome.html")
 
 @app.route("/dashboard")
-def dash():
+def dashboard():
     user = "Wyatt"
     notifications = ["Apphoot", "urnann", "more urnan"]
     return render_template("dashboard.html",user = user, notifications = notifications)
