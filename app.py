@@ -30,7 +30,7 @@ def calculator():
         num1 = int(request.form.get("num1", 0))
         num2 = int(request.form.get("num2", 0))
         num3 =  num1 + num2
-        return render_template("calculator.html", result = num3)
+        return render_template("calculator.html", result = num3, num1 = num1, num2 = num2)
     else:
         return render_template("calculator.html")
 
