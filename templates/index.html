@@ -1,76 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Wyatt's Flask Playground</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1e1e2f;
-            color: #f1f1f1;
-            margin: 0;
-            padding: 2rem;
-        }
+{% extends "base.html" %}
+{% block title %}Wyatt's Dev Sandbox{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+  <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">🧪 Wyatt's Dev Playground</h1>
+  <p style="color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+    Tinker. Test. Break. Build again. This is your experimental lab for Play Maker and beyond.
+  </p>
+</div>
 
-        h1 {
-            color: #73fbd3;
-            text-shadow: 1px 1px 3px #000;
-        }
+<hr style="margin: 2rem auto; border-color: #333; width: 80%;">
 
-        p {
-            color: #ccc;
-            font-size: 1.1rem;
-        }
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
+    <h3>🎮 Play Maker</h3>
+    <p>Design animated plays and simulate player movement.</p>
+    <a href="{{ url_for('play_maker') }}" role="button">Launch</a>
+  </div>
+  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
+    <h3>📊 Dashboard</h3>
+    <p>Coach overview and notifications system preview.</p>
+    <a href="{{ url_for('dashboard') }}" role="button">Open</a>
+  </div>
+  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
+    <h3>👋 Hello Page</h3>
+    <p>Generic route testing. Just vibes.</p>
+    <a href="{{ url_for('hello') }}" role="button" class="secondary">View</a>
+  </div>
+  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
+    <h3>📘 About</h3>
+    <p>Project overview and vision statement.</p>
+    <a href="{{ url_for('about') }}" role="button" class="secondary">Read</a>
+  </div>
+</div>
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 2rem;
-        }
-
-        li {
-            margin: 0.5rem 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #73fbd3;
-            background-color: #2e2e4d;
-            padding: 0.75rem 1.2rem;
-            border-radius: 8px;
-            display: inline-block;
-            transition: 0.2s ease;
-        }
-
-        a:hover {
-            background-color: #3a3a5c;
-            color: #ffffff;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        footer {
-            margin-top: 3rem;
-            font-size: 0.85rem;
-            color: #666;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Wyatt's Flask Playground 🧪</h1>
-        <p>This is your dev sandbox. Test stuff, break stuff, build cool shit.</p>
-
-        <ul>
-            <li><a href="{{ url_for('calculator') }}">➕ Calculator</a></li>
-
-        </ul>
-
-        <footer>🧰Built with Flask · Wyatt's Dev Playground</footer>
-    </div>
-</body>
-</html>
+<footer style="margin-top: 4rem; text-align: center; color: #666; font-size: 0.85rem;">
+  <p>Built by Wyatt · Flask-based · No database required (yet)</p>
+</footer>
+{% endblock %}

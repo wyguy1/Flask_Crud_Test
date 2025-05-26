@@ -34,5 +34,10 @@ def calculator():
     else:
         return render_template("calculator.html")
 
+@app.route("/playmaker")
+def play_maker():
+    return render_template("play_maker.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

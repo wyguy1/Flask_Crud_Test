@@ -1,25 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HOEFYFE</title>
-
-
-
-</head>
-<body>
-
-<h1>WELCOME {{ user }}!</h1>
-
-  <h4>Notifications:</h4>
-
-    <ul>
-      {% for notes in notifications %}
-        <li>
-          {{notes}}
-        </li>
-      {% endfor %}
-    </ul>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Coach Dashboard{% endblock %}
+{% block content %}
+<h1>📊 Coach Dashboard</h1>
+<p>Welcome {{ user }}!</p>
+<h4>Notifications:</h4>
+<ul>
+  {% for notes in notifications %}
+    <li>{{ notes }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
