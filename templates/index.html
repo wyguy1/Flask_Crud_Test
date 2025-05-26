@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyatt's Flask Playground</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1e1e2f;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #73fbd3;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #73fbd3;
+            background-color: #2e2e4d;
+            padding: 0.75rem 1.2rem;
+            border-radius: 8px;
+            display: inline-block;
+            transition: 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #3a3a5c;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Wyatt's Flask Playground 🧪</h1>
+        <p>This is your dev sandbox. Test stuff, break stuff, build cool shit.</p>
+
+        <ul>
+            <li><a href="{{ url_for('calculator') }}">➕ Calculator</a></li>
+
+        </ul>
+
+        <footer>🧰Built with Flask · Wyatt's Dev Playground</footer>
+    </div>
+</body>
+</html>
