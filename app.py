@@ -37,7 +37,9 @@ def calculator():
 @app.route("/playmaker")
 def play_maker():
     return render_template("play_maker.html")
-
+@app.route("/GameOne")
+def GameOne():
+    return render_template("GameOne.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
