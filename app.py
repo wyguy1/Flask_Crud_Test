@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 
 app = Flask(__name__)
 
@@ -40,6 +41,20 @@ def play_maker():
 @app.route("/GameOne")
 def GameOne():
     return render_template("GameOne.html")
+
+@app.route("/weather_current", methods = ["GET", "POST"])
+def weather_current():
+    lat, lon = 36.87, -95.11  # Coordinates for Welch, OK
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
+    response = requests.get(url)
+    data = response.json()
+    current = data.get("current_weather", {})
+    temp = current.get("temperature")
+    return render_template("weather-current.html" ,weather = temp)
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

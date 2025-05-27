@@ -1,11 +1,81 @@
 {% extends "base.html" %}
-{% block title %}About Play Maker{% endblock %}
+{% block title %}About Wyatt{% endblock %}
 {% block content %}
-<h1>📘 About</h1>
-<p>Play Maker is your all-in-one sports simulation and team management toolkit. Built with Flask, this prototype aims to:</p>
-<ul>
-  <li>🏈 Simulate player movement and plays</li>
-  <li>📊 Manage rosters, teams, and coach dashboards</li>
-  <li>🛠 Serve as a modular foundation for future sports analytics</li>
-</ul>
+<style>
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  .about-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  }
+  .about-card h2 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+  }
+  .about-card ul {
+    padding-left: 1.2rem;
+  }
+  .about-card li {
+    margin-bottom: 0.4rem;
+  }
+</style>
+
+<div class="about-section">
+
+  <!-- Profile Card -->
+  <div class="about-card" style="text-align: center;">
+    <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="My Photo" style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid #0ff; margin-bottom: 1rem;">
+    <h2 style="margin: 0;">Wyatt Riley</h2>
+    <p style="font-size: 0.95rem; color: #ccc;">Builder. Breaker. Systems thinker. Flask whisperer.</p>
+  </div>
+
+  <div class="about-card">
+    <h2>🧠 Who Am I?</h2>
+    <p>I'm Wyatt—builder, breaker, automator. I spend most of my time navigating the weird intersection of IT ops, app dev, and creative problem-solving. This site? It started as a Flask sandbox, but it's grown into a place where I tinker, test ideas, and experiment with making tech that actually *feels good* to use.</p>
+    <p>I like figuring things out the hard way, not because it’s efficient—but because it teaches me something real. That’s the core of this whole setup. Controlled chaos, but it works.</p>
+  </div>
+
+  <div class="about-card">
+    <h2>🛠️ Projects I’m Working On</h2>
+    <ul>
+      <li><strong>Play Maker</strong>: a multi-sport strategy platform where coaches can draw plays, simulate player motion, and eventually use AI to predict outcomes. It’s like if Madden and Google Docs had a baby… but it’s mine.</li>
+      <li><strong>Canvas Engine</strong>: a pure JS browser gamepad I’m building from scratch—think movement, collision, event triggers. No libraries. No fluff. Just canvas and code.</li>
+      <li><strong>Workflow Automation</strong>: building out complex forms + approval systems using Flask, SQL, and Laserfiche—cutting down wasted time in tribal government systems and replacing it with real, trackable logic.</li>
+      <li><strong>Formbot</strong>: a hardware/software sidekick with a separate “brain” (AI logic) and “body” (motors, sensors, voice). It listens, thinks, responds—and maybe waters your plants if I finish it.</li>
+    </ul>
+  </div>
+
+  <div class="about-card">
+    <h2>🎧 My Vibe</h2>
+    <ul>
+      <li>🕹 Gamer since dial-up. I like games that make you think: <em>Outer Wilds</em>, <em>Factorio</em>, <em>Into the Breach</em>, anything with systems and layers.</li>
+      <li>🎶 Constant lo-fi beats or synthwave in the background—keeps the mind sharp and the soul vibing.</li>
+      <li>📚 Always learning. If I’m not writing code, I’m usually reverse-engineering someone else’s—or questioning the entire stack.</li>
+      <li>🧠 High-functioning chaos: I move fast, break stuff, but always know how to put it back together cleaner than before.</li>
+    </ul>
+  </div>
+
+  <div class="about-card">
+    <h2>🌟 Highlights</h2>
+    <ul>
+      <li>🔧 Built a custom approval voting system with parallel routing and SQL persistence that functions inside a legacy document platform—and it works like magic.</li>
+      <li>🤝 Developed strong working relationships with external vendors by just being real—technical rapport over fake professionalism, every time.</li>
+      <li>🌀 Learned to turn burnout into productivity by building tools that work how I *wish* things worked. My codebase is sometimes therapy.</li>
+      <li>🚀 Everything I build is with future-me in mind: faster, smoother, more expressive—and if someone else benefits, that’s the bonus.</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  console.log("%cWelcome to Wyatt's Lab", "color: #0ff; font-weight: bold; font-size: 16px;");
+  console.log("You’re not supposed to be here, but since you are… enjoy the view.");
+</script>
 {% endblock %}
