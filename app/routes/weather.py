@@ -22,8 +22,6 @@ def wndDir(x):
     index = round(x / 45) % 8
     return directions[index]
 
-def foreCast():
-
 
 def weatherBigMain(lat, lon):
     url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
