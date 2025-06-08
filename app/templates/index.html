@@ -14,22 +14,17 @@
   <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
     <h3>🎮 Play Maker</h3>
     <p>Design animated plays and simulate player movement.</p>
-    <a href="{{ url_for('play_maker') }}" role="button">Launch</a>
+    <a href="{{ url_for('main_bp.playmaker') }}" role="button">Launch</a>
   </div>
   <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
     <h3>📊 Dashboard</h3>
     <p>Coach overview and notifications system preview.</p>
-    <a href="{{ url_for('dashboard') }}" role="button">Open</a>
-  </div>
-  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
-    <h3>👋 Hello Page</h3>
-    <p>Generic route testing. Just vibes.</p>
-    <a href="{{ url_for('hello') }}" role="button" class="secondary">View</a>
+    <a href="{{ url_for('dashboard_bp.dashboard') }}" role="button">Open</a>
   </div>
   <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
     <h3>📘 About</h3>
     <p>Project overview and vision statement.</p>
-    <a href="{{ url_for('about') }}" role="button" class="secondary">Read</a>
+    <a href="{{ url_for('main_bp.about') }}" role="button" class="secondary">Read</a>
   </div>
 </div>
 

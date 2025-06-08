@@ -71,16 +71,16 @@
     <header>
         <div class="brand">WYATT LABS ⚗️</div>
         <nav>
-            <a href="{{ url_for('DevHome') }}">🏠 Dev Home</a>
-            <a href="{{ url_for('index') }}">🧪 Sandbox</a>
-            <a href="{{ url_for('dashboard') }}">📊 Dashboard</a>
-            <a href="{{ url_for('calculator') }}">➕ Calculator</a>
-            <a href="{{ url_for('hello') }}">👋 Hello</a>
-            <a href="{{ url_for('play_maker') }}">📃 Play Maker</a>
-            <a href="{{ url_for('about') }}">📘 About</a>
-            <a href="{{ url_for('GameOne') }}">🎮 GameOne</a>
-            <a href="{{ url_for('weather_current')}}">🌩️Weather API!</a>
+            <a href="{{ url_for('main_bp.dev_home') }}">🏠 Dev Home</a>
+            <a href="{{ url_for('main_bp.index') }}">🧪 Sandbox</a>
+            <a href="{{ url_for('dashboard_bp.dashboard') }}">📊 Dashboard</a>
+            <a href="{{ url_for('calculator_bp.calculator') }}">➕ Calculator</a>
+            <a href="{{ url_for('main_bp.playmaker') }}">📃 Play Maker</a>
+            <a href="{{ url_for('main_bp.about') }}">📘 About</a>
+            <a href="{{ url_for('main_bp.game_one') }}">🎮 GameOne</a>
+            <a href="{{ url_for('weather_bp.weather_current') }}">🌩️ Weather API!</a>
         </nav>
+
     </header>
 
     <div class="content">
