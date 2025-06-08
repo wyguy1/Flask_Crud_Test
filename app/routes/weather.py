@@ -10,8 +10,16 @@ def weather_current():
     response = requests.get(url)
     data = response.json()
     current = data.get("current_weather", {})
-    temp = current.get("temperature")
-    wnd = current.get("windspeed")
+    temp = fTocConversion(current.get("temperature"))
+    wnd = wndSpeedtoMPH(current.get("windspeed"))
     wndDir = current.get("winddirection")
-    c2fconvert = (temp * 1.8) + 32
-    return render_template("weather-current.html", weather=c2fconvert, windSpeed=wnd, windDirection=wndDir)
+    return render_template("weather-current.html", weather=temp, windSpeed=wnd, windDirection=wndDir)
+
+def fTocConversion(x):
+    temp = (x * 1.8) + 32
+    return temp
+
+def wndSpeedtoMPH(x):
+
+    wndMPH = x * .621371
+    return wndMPH
