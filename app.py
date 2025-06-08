@@ -50,7 +50,10 @@ def weather_current():
     data = response.json()
     current = data.get("current_weather", {})
     temp = current.get("temperature")
-    return render_template("weather-current.html" ,weather = temp)
+    wnd = current.get("windspeed")
+    wndDir = current.get("winddirection")
+    c2fconvert = (temp * 1.8) + 32
+    return render_template("weather-current.html" ,weather = c2fconvert, windSpeed = wnd, windDirection = wndDir)
 
 
 
