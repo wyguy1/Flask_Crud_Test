@@ -6,7 +6,7 @@ weather_bp = Blueprint('weather_bp', __name__)
 @weather_bp.route("/weather_current", methods=["GET", "POST"])
 def weather_current():
     temp,wnd,windDir = weatherBigMain(36.87, -95.11)  # Welch, OK
-    return render_template("weather-current.html", weather=temp, windSpeed=wnd, windDirection=windDir)
+    return render_template("weather-current.html", weather=temp, windSpeed=round(wnd), windDirection=windDir)
 
 def fTocConversion(x):
     temp = (x * 1.8) + 32
@@ -28,8 +28,8 @@ def weatherBigMain(lat, lon):
     response = requests.get(url)
     data = response.json()
     current = data.get("current_weather", {})
-    temp = fTocConversion(current.get("temperature"))
-    wnd = wndSpeedtoMPH(current.get("windspeed"))
+    temp = round(fTocConversion(current.get("temperature")))
+    wnd = round(wndSpeedtoMPH(current.get("windspeed")))
     windDir = wndDir(current.get("winddirection"))
     return temp,wnd,windDir
 

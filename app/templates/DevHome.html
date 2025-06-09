@@ -1,9 +1,39 @@
+
 {% extends "base.html" %}
 
-{% block title %}Calculator{% endblock %}
+{% block title %}Dev Home{% endblock %}
 
 {% block content %}
+<div class="container">
+    <!-- Left Sidebar -->
+    <div class="sidebar left">
+        <h3>Tools</h3>
+        <ul>
+            <li><a href="{{ url_for('calculator_bp.calculator') }}">➕ Calculator</a></li>
+            <li><a href="{{ url_for('weather_bp.weather_current') }}">🌩️ Weather</a></li>
+            <li><a href="{{ url_for('main_bp.playmaker') }}">📃 PlayMaker</a></li>
+        </ul>
+    </div>
 
-    <h2>DEVHoMe</h2>
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Welcome to Dev Home</h1>
+        <p>This is your command center. Launch tools, monitor systems, or test builds.</p>
 
+        <h2>Live Feed</h2>
+        <pre style="background:#1e1e1e;padding:1rem;border-radius:5px;">
+[12:34] GET /weather_current ✔️
+[12:35] POST /calculator (3+5=8)
+[12:36] Loaded GameOne canvas...
+        </pre>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right">
+        <h3>Status</h3>
+        <p>Latest Build: 2025-06-08</p>
+        <p>Uptime: {{ uptime or "Unavailable" }}</p>
+        <p>💡 Tip: Test canvas input features now.</p>
+    </div>
+</div>
 {% endblock %}

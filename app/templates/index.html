@@ -1,34 +1,41 @@
+
 {% extends "base.html" %}
-{% block title %}Wyatt's Dev Sandbox{% endblock %}
+
+{% block title %}Welcome | Flask Playground{% endblock %}
+
 {% block content %}
-<div style="text-align: center;">
-  <h1 style="font-size: 2.8rem; margin-bottom: 0.5rem;">🧪 Wyatt's Dev Playground</h1>
-  <p style="color: #aaa; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-    Tinker. Test. Break. Build again. This is your experimental lab for Play Maker and beyond.
-  </p>
+<div style="text-align: center; padding: 2rem;">
+    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 1rem;">👨‍🔬 Welcome to Wyatt Labs</h1>
+    <p style="font-size: 1.25rem; color: #ccc;">
+        This is your custom dev playground. Test features, launch ideas, and break stuff productively.
+    </p>
+
+    <div style="margin-top: 3rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;">
+        <a href="{{ url_for('main_bp.dev_home') }}" style="background:#3a0ca3;padding:1rem 2rem;border-radius:8px;text-decoration:none;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.4);transition:0.2s ease;">
+            🚀 Enter Dev Home
+        </a>
+        <a href="{{ url_for('weather_bp.weather_current') }}" style="background:#4361ee;padding:1rem 2rem;border-radius:8px;text-decoration:none;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.4);transition:0.2s ease;">
+            🌦️ Check the Weather
+        </a>
+        <a href="{{ url_for('calculator_bp.calculator') }}" style="background:#7209b7;padding:1rem 2rem;border-radius:8px;text-decoration:none;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.4);transition:0.2s ease;">
+            ➕ Try the Calculator
+        </a>
+        <a href="https://github.com/wyguy1" target="_blank" style="background:#ff6f61;padding:1rem 2rem;border-radius:8px;text-decoration:none;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.4);transition:0.2s ease;">
+            🧠 GitHub Profile
+        </a>
+        <a href="https://open-meteo.com/en/docs" target="_blank" style="background:#2ec4b6;padding:1rem 2rem;border-radius:8px;text-decoration:none;color:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.4);transition:0.2s ease;">
+            📄 Weather API Docs
+        </a>
+    </div>
+
+    <div style="margin-top: 4rem;">
+        <h2 style="color: #fff;">🛠️ Upcoming Features</h2>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+            <li>🎮 GameOne upgrades with character movement</li>
+            <li>💾 Local storage data viewer panel</li>
+            <li>🔧 Admin dashboard with live logs</li>
+            <li>🌐 Geo-aware weather settings</li>
+        </ul>
+    </div>
 </div>
-
-<hr style="margin: 2rem auto; border-color: #333; width: 80%;">
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
-  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
-    <h3>🎮 Play Maker</h3>
-    <p>Design animated plays and simulate player movement.</p>
-    <a href="{{ url_for('main_bp.playmaker') }}" role="button">Launch</a>
-  </div>
-  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
-    <h3>📊 Dashboard</h3>
-    <p>Coach overview and notifications system preview.</p>
-    <a href="{{ url_for('dashboard_bp.dashboard') }}" role="button">Open</a>
-  </div>
-  <div style="background: #222; padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 10px #0004;">
-    <h3>📘 About</h3>
-    <p>Project overview and vision statement.</p>
-    <a href="{{ url_for('main_bp.about') }}" role="button" class="secondary">Read</a>
-  </div>
-</div>
-
-<footer style="margin-top: 4rem; text-align: center; color: #666; font-size: 0.85rem;">
-  <p>Built by Wyatt · Flask-based · No database required (yet)</p>
-</footer>
 {% endblock %}
